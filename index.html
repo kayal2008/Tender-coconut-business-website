@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Narayanan Illaneer Viyaapari</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <header class="top-header">
+      <div class="logo-wrap">
+        <div class="logo-icon" aria-hidden="true">🌴🥥</div>
+        <div class="logo-text">
+          <h1 id="brandEnglish">Narayanan Illaneer Viyaapari</h1>
+          <p id="brandTamil">நாராயணன் இளநீர் வியாபாரி</p>
+        </div>
+      </div>
+      <button id="languageToggle" class="btn btn-lang" type="button" aria-label="Switch Language">
+        தமிழ் / English
+      </button>
+    </header>
+
+    <main class="container">
+      <section class="card welcome-card">
+        <h2 id="welcomeTitle">வணக்கம்!</h2>
+        <p id="welcomeSubtitle">நாராயணன் இளநீர் வியாபாரிக்கு வரவேற்கிறோம்</p>
+      </section>
+
+      <section class="card dashboard-card">
+        <h2 id="dashboardTitle">இன்றைய கணக்கு பலகை</h2>
+
+        <div class="input-grid">
+          <label class="field">
+            <span id="soldLabel">🥥 விற்ற இளநீர் எண்ணிக்கை</span>
+            <input id="soldCount" type="number" inputmode="numeric" min="0" placeholder="0" />
+          </label>
+
+          <label class="field">
+            <span id="priceLabel">💰 ஒரு இளநீர் விலை</span>
+            <input id="pricePerCoconut" type="number" inputmode="decimal" min="0" placeholder="0" />
+          </label>
+
+          <label class="field">
+            <span id="vehicleLabel">🚚 வாகன செலவு</span>
+            <input id="vehicleExpense" type="number" inputmode="decimal" min="0" placeholder="0" />
+          </label>
+
+          <label class="field">
+            <span id="salaryLabel">👨‍🌾 ஊழியர் சம்பளம்</span>
+            <input id="salaryExpense" type="number" inputmode="decimal" min="0" placeholder="0" />
+          </label>
+
+          <label class="field">
+            <span id="otherLabel">🧾 மற்ற செலவுகள்</span>
+            <input id="otherExpense" type="number" inputmode="decimal" min="0" placeholder="0" />
+          </label>
+        </div>
+
+        <div class="action-row">
+          <button id="calculateBtn" class="btn btn-primary" type="button">🧮 கணக்கிடு</button>
+          <button id="speakBtn" class="btn btn-secondary" type="button">🔊 சொல்லு</button>
+          <button id="clearBtn" class="btn btn-danger" type="button">♻️ அழி</button>
+        </div>
+
+        <p id="resultSentence" class="result-sentence">இன்று உங்களுக்கு சமநிலை ரூபாய் பூஜ்யம்</p>
+      </section>
+
+      <section class="card summary-card">
+        <h2 id="summaryTitle">📊 இன்றைய சுருக்கம்</h2>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <p id="salesTitle">மொத்த விற்பனை</p>
+            <p id="salesValue">0</p>
+          </div>
+          <div class="summary-item">
+            <p id="expenseTitle">மொத்த செலவு</p>
+            <p id="expenseValue">0</p>
+          </div>
+          <div class="summary-item">
+            <p id="resultTitle">லாபம் / நட்டம்</p>
+            <p id="resultValue">0</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+:root {
+  --leaf: #2f7d32;
+  --leaf-dark: #1f5c23;
+  --soil: #6f4e37;
+  --sand: #fff7cc;
+  --card: #fffdf2;
+  --danger: #b23a2b;
+  --text: #1e1e1e;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f3ffea 0%, #fffbe3 50%, #f8f0d8 100%);
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 10% 12%, rgba(47, 125, 50, 0.12), transparent 18%),
+    radial-gradient(circle at 88% 18%, rgba(111, 78, 55, 0.14), transparent 18%),
+    radial-gradient(circle at 20% 80%, rgba(47, 125, 50, 0.12), transparent 20%),
+    radial-gradient(circle at 90% 88%, rgba(111, 78, 55, 0.12), transparent 20%);
+  z-index: 0;
+}
+
+.top-header,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 247, 204, 0.95);
+  border-bottom: 3px solid #d9c07f;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-icon {
+  font-size: 2.1rem;
+}
+
+.logo-text h1 {
+  margin: 0;
+  color: var(--leaf-dark);
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
+}
+
+.logo-text p {
+  margin: 0.2rem 0 0;
+  color: var(--soil);
+  font-weight: 700;
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 2px solid #e7d9a4;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  animation: fadeUp 0.45s ease;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--leaf-dark);
+  font-size: clamp(1.2rem, 4.2vw, 1.8rem);
+}
+
+.welcome-card p {
+  margin: 0;
+  font-size: clamp(1rem, 3.4vw, 1.3rem);
+}
+
+.input-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 4.2vw, 1.45rem);
+}
+
+.field input {
+  width: 100%;
+  height: 60px;
+  border: 2px solid #c6dca2;
+  border-radius: 12px;
+  padding: 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  background: #fff;
+}
+
+.field input:focus {
+  outline: 3px solid rgba(47, 125, 50, 0.25);
+  border-color: var(--leaf);
+}
+
+.action-row {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: 1fr;
+}
+
+.btn {
+  border: none;
+  min-height: 60px;
+  border-radius: 12px;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.6rem 0.7rem;
+  transition: transform 0.12s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--leaf);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--soil);
+  color: #fff;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-lang {
+  background: #f0dd96;
+  color: #2c2c2c;
+  min-height: 48px;
+}
+
+.result-sentence {
+  margin: 0.8rem 0 0;
+  font-size: clamp(1rem, 3.4vw, 1.2rem);
+  font-weight: 700;
+  color: #4c4c4c;
+  min-height: 1.6rem;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: 1fr;
+}
+
+.summary-item {
+  background: #fff;
+  border-radius: 12px;
+  border: 2px solid #dce8c6;
+  padding: 0.85rem;
+}
+
+.summary-item p {
+  margin: 0;
+}
+
+.summary-item p:first-child {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+#salesValue,
+#expenseValue,
+#resultValue {
+  font-size: clamp(1.35rem, 5vw, 1.8rem);
+  font-weight: 800;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 760px) {
+  .container {
+    padding: 1.2rem;
+  }
+
+  .input-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .input-grid .field:last-child {
+    grid-column: span 2;
+  }
+
+  .action-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
